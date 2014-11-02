@@ -1,0 +1,195 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/clouds"
+    tools:context=".LauncherActivity">
+
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/prompt"
+        style="@style/CardStyle"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_gravity="center"
+        card_view:cardCornerRadius="4dp"
+        card_view:cardElevation="8dp"
+        card_view:cardBackgroundColor="@color/wet_asphalt"
+        card_view:contentPadding="@dimen/card_padding"
+        android:onClick="launchNotificationAccess">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/warning_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:gravity="center"
+                android:src="@drawable/ic_error_white_48dp" />
+
+            <TextView
+                android:id="@+id/warning_line1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/warning_icon"
+                android:textColor="@color/snow_white"
+                android:text="@string/prompt_notification_access_line1"/>
+
+            <TextView
+                android:id="@+id/warning_line2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/warning_icon"
+                android:layout_below="@id/warning_line1"
+                android:textColor="@color/snow_white"
+                android:text="@string/prompt_notification_access_line2"/>
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/empty"
+        style="@style/CardStyle"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_below="@id/prompt"
+        card_view:cardCornerRadius="@dimen/card_corner_radius"
+        card_view:cardElevation="@dimen/card_elevation"
+        card_view:cardBackgroundColor="@color/snow_white"
+        card_view:contentPadding="@dimen/card_padding">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <ImageView
+                android:id="@+id/myo_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:alpha="0.7"
+                android:layout_marginBottom="5dp"
+                android:src="@drawable/ic_launcher" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/myo_icon"
+                android:text="@string/empty_card_not_connected" />
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/myo"
+        style="@style/CardStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/prompt"
+        android:visibility="gone"
+        card_view:cardCornerRadius="@dimen/card_corner_radius"
+        card_view:cardElevation="@dimen/card_elevation"
+        card_view:cardBackgroundColor="@color/snow_white"
+        card_view:contentPadding="@dimen/card_padding">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/myo_card_icon"
+                android:layout_width="@dimen/fab_size"
+                android:layout_height="@dimen/fab_size"
+                android:layout_alignParentTop="true"
+                android:layout_marginRight="16dp"
+                android:src="@drawable/ic_launcher"/>
+
+            <TextView
+                android:id="@+id/myo_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/myo_card_icon"
+                android:text="@string/myo_card_name_placeholder" />
+
+            <TextView
+                android:id="@+id/myo_mac"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/myo_name"
+                android:layout_toRightOf="@+id/myo_card_icon"
+                android:text="@string/myo_card_mac_placeholder" />
+
+            <TextView
+                android:id="@+id/myo_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/myo_mac"
+                android:layout_toRightOf="@+id/myo_card_icon"
+                android:text="@string/myo_card_status_placeholder" />
+
+            <TextView
+                android:id="@+id/myo_disconnect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_below="@id/myo_status"
+                android:layout_alignParentRight="true"
+                android:textAppearance="@android:style/TextAppearance.Material.Notification"
+                android:text="@string/myo_card_action_disconnect"
+                android:elevation="2dp"
+                android:fontFamily="sans-serif-medium"
+                android:textColor="@color/alizarin"
+                android:onClick="removeMyo"/>
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/fab_padding"
+        android:layout_marginRight="@dimen/fab_padding"
+        android:translationZ="@dimen/fab_z_elevation"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:gravity="center">
+
+        <ImageButton
+            android:id="@+id/fab"
+            android:layout_width="@dimen/fab_size"
+            android:layout_height="@dimen/fab_size"
+            android:background="@drawable/ripple"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_add_white_18dp"
+            android:stateListAnimator="@anim/pull"
+            android:elevation="@dimen/fab_elevation"
+            android:visibility="visible"
+            android:onClick="addMyo"/>
+
+        <ImageButton
+            android:id="@+id/fab_complete"
+            android:layout_width="@dimen/fab_size"
+            android:layout_height="@dimen/fab_size"
+            android:background="@drawable/nephritis_ripple"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_done_white_24dp"
+            android:stateListAnimator="@anim/pull"
+            android:elevation="@dimen/fab_elevation"
+            android:visibility="invisible" />
+
+        <ProgressBar
+            android:id="@+id/progress"
+            android:indeterminateTint="@color/nephritis"
+            android:indeterminateTintMode="src_in"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:visibility="invisible" />
+    </FrameLayout>
+</RelativeLayout>

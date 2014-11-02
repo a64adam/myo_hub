@@ -1,0 +1,14 @@
+<resources>
+    <dimen name="fab_size">56dp</dimen>
+    <dimen name="fab_padding">16dp</dimen>
+    <dimen name="fab_elevation">2dp</dimen>
+    <dimen name="fab_pressed_elevation">4dp</dimen>
+    <dimen name="fab_z_elevation">2dp</dimen>
+
+    <dimen name="progress_size">72dp</dimen>
+
+    <dimen name="card_margin">8dp</dimen>
+    <dimen name="card_padding">16dp</dimen>
+    <dimen name="card_elevation">2dp</dimen>
+    <dimen name="card_corner_radius">4dp</dimen>
+</resources>
