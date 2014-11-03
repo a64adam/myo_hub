@@ -8,9 +8,9 @@
     <string name="prompt_notification_access_line1">Myo Hub requires notification access.</string>
     <string name="prompt_notification_access_line2">Tap here to enable.</string>
 
-    <string name="empty_card_not_connected">No Myo's Connected!</string>
+    <string name="empty_card_not_connected">No Myo\'s Connected!</string>
 
-    <string name="myo_card_name_placeholder">Name: Adam's Myo</string>
+    <string name="myo_card_name_placeholder">Name: Adam\'s Myo</string>
     <string name="myo_card_mac_placeholder">MAC: 1E:1E:1E:1E:1E:1E</string>
     <string name="myo_card_status_placeholder">Status: Connected</string>
     <string name="myo_card_action_disconnect">DISCONNECT</string>
